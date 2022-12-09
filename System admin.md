@@ -61,4 +61,19 @@ dpkg -s $package &> /dev/null
 $? -eq 0
 ````
 
+#### Example on how a .service in serviced looks like
+````
+[Unit]
+Description=Gives date every 10 sec
+
+[Service]
+User=mk
+WorkingDirectory=/home/mk/Desktop/DevSecOps
+ExecStart=/home/mk/Desktop/DevSecOps/date.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+````
+
 
